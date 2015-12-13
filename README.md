@@ -1,1 +1,1 @@
-# Basics-programming
+There are hometasks for basics programming course
