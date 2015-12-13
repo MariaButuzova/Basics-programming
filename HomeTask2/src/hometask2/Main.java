@@ -16,6 +16,11 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        test();
+    }
+    
+    public static void test() {
+        System.out.println(4);
     }
     
 }
