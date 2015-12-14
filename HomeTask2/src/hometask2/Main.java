@@ -63,7 +63,6 @@ public class Main {
         char cFact = '!';
         boolean bool = true;
         int iPercent = r;
-        //double dValue = 0.99;
         float fValue = 0.99f;
         //String strA = "There is ";
         String strB = ", that there are ";
