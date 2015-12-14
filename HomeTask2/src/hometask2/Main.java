@@ -22,14 +22,16 @@ public class Main {
     }
     
     public static void test1AllOperators() {
+        System.out.println("Test 1:");
         int intValueOne = 1;
         int intValueTen = 10;
         int intValueSix = 6;
         char charValue = '\u004D';
         double doubleValueOne = 1.1;
         double doubleValueGalaxy = 42.42;
+        float floatValueGalaxy = 42.42f;
         boolean booleanValue = true;
-        
+
         int incrValueTwo = ++intValueOne;
         int incrValueTen = intValueTen++;
         intValueOne--;
@@ -40,24 +42,32 @@ public class Main {
         System.out.println("doubleValueOne = " + doubleValueOne++ + 
                 "; M + 1 = " + ++charValue + 
                 "; doubleValueOne (after increment) = " + doubleValueOne);
+
+        System.out.println("double 42.42 mod 10 = " + (doubleValueGalaxy % 
+                intValueTen) + " = to float = " + (float)(doubleValueGalaxy %
+                        intValueTen));        
+        System.out.println("float 42.42 mod 10 = " + (floatValueGalaxy % 
+                intValueTen) + " = to double = " + (double)(floatValueGalaxy %
+                        intValueTen));
         
         doubleValueOne += doubleValueGalaxy / ++doubleValueOne;
         doubleValueGalaxy *= intValueSix-- % 4;
         
-        System.out.println("42.42 mod 10 = " + doubleValueGalaxy % intValueTen);
         System.out.println("2.1 + 42.42/(1+2.1) = " + doubleValueOne);
         System.out.println("(int)42.42 * (6 mod 4) + String '5' = " + 
-                (int)doubleValueGalaxy + intValueSix);
+                doubleValueGalaxy + intValueSix);
         System.out.println("42.42 * (6 mod 4) + 5 = " + (doubleValueGalaxy + 
                 intValueSix));
         System.out.println(!booleanValue);
     }
     
     public static void test3String(String str, int test, boolean bool) {
+        System.out.println("Test 3:");
         System.out.println(str + (test + 5) + " == " + !bool);
     }
     
     public static String test4HomeTask1(String str, int r) {
+        System.out.println("Test 4:");
         String strH = "Hello, ";
         String strU = "U-Rise";
         char cFact = '!';
