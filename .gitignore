@@ -1,7 +1,16 @@
-/HomeTask2/nbproject/private/
+/HomeTask2/nbproject/
 */nbproject
 /README.md
 /HomeTask2/build/
 /HomeTask1/build/
+<<<<<<< HEAD
 /nbproject/private/
 /AllOfThePeople/build/
+=======
+/AnyHolidays
+/AllOfThePeople/build/
+/AllOfThePeople/test/
+/AllOfThePeople/nbproject/
+/AllOfThePeople/build.xml
+/AllOfThePeople/manifest.mf
+>>>>>>> 33db26c1db9e2dcb0f57bc5e756c94800f18be97
