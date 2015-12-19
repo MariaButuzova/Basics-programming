@@ -10,11 +10,11 @@ package allofthepeople;
  * @author Mari
  */
 import java.util.Calendar;
-import java.text.SimpleDateFormat;
-import java.text.DateFormat;
+//import java.text.SimpleDateFormat;
+//import java.text.DateFormat;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.text.ParseException;
+//import java.util.GregorianCalendar;
+//import java.text.ParseException;
 
 //import java.util.Locale;
 
@@ -70,7 +70,6 @@ public class Human {
 
 //        System.out.println(tempDayOfBirth.get(Calendar.MONTH));
         System.out.println(today.getTime());
-//        System.out.println(today.get(Calendar.DAY_OF_WEEK));
         int age = today.get(Calendar.YEAR) - tempDayOfBirth.get(Calendar.YEAR);
         if (today.get(Calendar.DAY_OF_YEAR) < 
                 tempDayOfBirth.get(Calendar.DAY_OF_YEAR)) {
