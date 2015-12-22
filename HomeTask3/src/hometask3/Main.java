@@ -16,7 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= 6; i++) {
             test3Switch(i);
         }
     }
@@ -29,19 +29,23 @@ public class Main {
                 System.out.println(test1Tern());
                 break;
             case 2:
-                System.out.println("Test 2, 4, 5:");
-                test2Test4Test5Fibonacci((int)(Math.random()*185) - 92);
+                System.out.println("Test 2:");
+                test2GetFibonacciNumbers((int)(Math.random()*185) - 92);
                 break;
             case 3:
                 System.out.println("Test 3:");
                 System.out.println("done!");
                 break;
-           /* case 4:
+            case 4:
                 System.out.println("Test 4:");
+                for (int i = 0; i < 5;) {
+                    System.out.println(++i + test4GetString(": ", 100));
+                }
                 break;
             case 5:
                 System.out.println("Test 5:");
-                break; */
+                test5OutputNumbers();
+                break;
             default:
                 System.out.println("There are only 5 tests. To be continued...");
         }
@@ -68,8 +72,7 @@ public class Main {
         return ( result > 5) ? "> 5" : "<= 5";
     }
     
-    //should add BigInteger (instead long)...
-    public static long test2Test4Test5Fibonacci(int indexFibonacci){
+    public static long test2GetFibonacciNumbers(int indexFibonacci){
         long numberFibonacci = 1;
         if (indexFibonacci < 0) {
             System.out.println(indexFibonacci + " < 0. It was changed to +");
@@ -97,5 +100,25 @@ public class Main {
         }
             //System.out.println(numberFibonacci);
             return numberFibonacci;         
+    }
+    
+    public static String test4GetString(String str, int r) {
+        String strH = "Hello, ";
+        String strU = "U-Rise";
+        char cFact = '!';
+        boolean bool = true;
+        int iPercent = r;
+        float fValue = 0.99f;
+        String strB = ", that there are ";
+        String strC = " percent sucess with ";
+        String strD = " happiness.";
+        System.out.println("There is " + bool + strB + iPercent + strC + fValue 
+        + strD);
+        return str +=strH + strU + cFact;
+    }
+    
+    public static void test5OutputNumbers() {
+        int i = 0;
+        while (i < 10) System.out.println(++i);        
     }
 }
