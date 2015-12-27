@@ -25,8 +25,7 @@ public class Main {
         System.out.println(getPowerFunctionRecursion(random.nextInt(201) - 100,
                 random.nextInt(21) - 10));
         System.out.println("Test 4.2 without recursion:");
-        System.out.println(getPowerFunction(random.nextInt(2001) - 1000,
-                random.nextInt(2001) - 1000));
+        System.out.println(getPowerFunction(100, 0));
         System.out.println("Test 4.3.1 getFibonacciNumbers:");
         getFibonacciNumbers(6);
         System.out.println("Test 4.3.2 getFibonacciNumbersRecursion:");
@@ -43,16 +42,12 @@ public class Main {
     
     public static int getPowerFunctionRecursion(int x, int y) {
         if (y > 1) {
-            System.out.println(x + " pow " + y);
             return (x * (getPowerFunctionRecursion(x, y - 1)));
         } else if (y == 1) {
-            System.out.println(x + " pow " + y);
             return x;
         } else if (y == 0) {
-            System.out.println(x + " pow " + y);
             return 1;
         } else {
-            System.out.println(x + " pow " + y);
             return 0;
         }
     }
