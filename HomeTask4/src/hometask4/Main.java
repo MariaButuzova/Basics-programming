@@ -38,9 +38,13 @@ public class Main {
     }
     
     public static int getPowerFunction(int n, int m) {
-        return ( (m > 1) ? (n * (getPowerFunction(n, m - 1))) :
-                (m == 1) ? n :
-                (m == 0) ? 1 : 0);    
+        if (m > 1) {
+            return (n * (getPowerFunction(n, m - 1)));
+        } else if (m == 1) {
+            return n;
+        } else if (m == 0) {
+            return 1;
+        } else return 0;
     }
     
     public static void getFibonacciNumbers(int count){
