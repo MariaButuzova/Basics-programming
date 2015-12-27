@@ -17,12 +17,16 @@ public class Main {
         int[] arrayInt = new int[random.nextInt(1000) + 1];
         for (int i = 0; i < arrayInt.length; ++i){
             arrayInt[i] = random.nextInt(2001) - 1000;
-            System.out.println(arrayInt[i]);
+            //System.out.println(arrayInt[i]);
         }
         System.out.println("Test 4.1:");
         System.out.println(getSumOfArrayNumbers(arrayInt));
         System.out.println("Test 4.2:");
-        System.out.println(getPowerFunction(45, 5));
+        System.out.println(getPowerFunctionRecursion(random.nextInt(201) - 100,
+                random.nextInt(21) - 10));
+        System.out.println("Test 4.2 without recursion:");
+        System.out.println(getPowerFunction(random.nextInt(2001) - 1000,
+                random.nextInt(2001) - 1000));
         System.out.println("Test 4.3.1 getFibonacciNumbers:");
         getFibonacciNumbers(6);
         System.out.println("Test 4.3.2 getFibonacciNumbersRecursion:");
@@ -37,14 +41,26 @@ public class Main {
         return sum;
     }
     
-    public static int getPowerFunction(int n, int m) {
-        if (m > 1) {
-            return (n * (getPowerFunction(n, m - 1)));
-        } else if (m == 1) {
-            return n;
-        } else if (m == 0) {
+    public static int getPowerFunctionRecursion(int x, int y) {
+        if (y > 1) {
+            System.out.println(x + " pow " + y);
+            return (x * (getPowerFunctionRecursion(x, y - 1)));
+        } else if (y == 1) {
+            System.out.println(x + " pow " + y);
+            return x;
+        } else if (y == 0) {
+            System.out.println(x + " pow " + y);
             return 1;
-        } else return 0;
+        } else {
+            System.out.println(x + " pow " + y);
+            return 0;
+        }
+    }
+    
+    public static BigInteger getPowerFunction(int x, int y) {
+        System.out.println(x + " pow " + y);
+        BigInteger a = BigInteger.valueOf(x);
+        return ((y < 0) ? BigInteger.ZERO : a.pow(y));
     }
     
     public static void getFibonacciNumbers(int count){
