@@ -15,63 +15,51 @@ public class Main {
         for (int taskNumber = 1; taskNumber < 6; ++taskNumber) {
             performTask(taskNumber);
         }
+        performTask(14);
     }
 
     public static void performTask(int taskNumber) {
+        int[] array;
+        String myString;
+        char ch;
+        System.out.println("Performing task #" + taskNumber);
         switch (taskNumber) {
             case 1:
-                System.out.println("Task 1:");
-                String myString1 = InputDataUtils.getInputString();
-                System.out.println(StringDataUtils.addHelloToString(myString1));
+                myString = InputDataUtils.getInputString();
+                System.out.println(StringDataUtils.addHelloToString(myString));
                 break;
             case 2:
-                System.out.println("Task 2:");
-                char ch = InputDataUtils.getInputCharSymbol();
+                ch = InputDataUtils.getInputCharSymbol();
                 System.out.println(ch + " " + (Character.isDigit(ch)));
                 break;
             case 3:
-                System.out.println("Task 3:");
-                int[] array5 = InputDataUtils.getInputIntArray();
-                TriangleUtils.getCountRightTriangles(array5);
+                array = InputDataUtils.
+                        getImputIntArrayNumberElementsByRandom(66);
+                TriangleUtils.getCountRightTriangles(array);
                 break;
             case 4:
-                System.out.println("Task 4:");
-                int[] array2 = InputDataUtils.getInputIntArray();
-                TriangleUtils.getCountIsoscelesTriangles(array2);
+                array = InputDataUtils.
+                        getImputIntArrayNumberElementsByRandom(9);
+                TriangleUtils.getCountIsoscelesTriangles(array);
                 break;
             case 5:
-                System.out.println("Task 5:");
-                int[] array1 = InputDataUtils.getInputIntArray();
-                TriangleUtils.getCountEquilateralTriangles(array1);
+                array = InputDataUtils.getInputIntArray();
+                TriangleUtils.getCountEquilateralTriangles(array);
+                array = InputDataUtils.
+                        getImputIntArrayNumberElementsByRandom(8);
                 System.out.println(TriangleUtils.
-                        getCountEquilateralTrianglesWithAnyData(array1));
+                        getCountEquilateralTrianglesWithAnyData(array));
                 break;
             case 14:
-                System.out.println("Task 14:");
-                String myString14 = InputDataUtils.getInputString();
-                System.out.println(myString14);
+                myString = InputDataUtils.getInputStringByConsole();
+                System.out.println(myString);
                 System.out.println(StringDataUtils
-                        .checkStringIsNumber(myString14));
+                        .checkStringIsNumber(myString));
                 break;
             default:
                 System.out.println("6 tasks have been implemented."
                         + " There is more to come");
         }
     }
-        
 
-    
-    
-
-/*    
-    public static String addHelloToString(String string) {
-        StringBuilder s = new StringBuilder("Hello");
-        s.append(string);
-        return s.toString();
-    }
-    
-    public static boolean checkStringIsNumber(String string) {
-        
-        return true;
-    }*/
 }

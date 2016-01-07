@@ -13,11 +13,11 @@ public class StringDataUtils {
     }
    
     public static boolean checkStringIsNumber(String string) {
-        int i = 0;
-        while (i < string.length() && Character.isDigit(string.charAt(i))) {
-            ++i;
-            return true;
+        for (int i = 0; i < string.length(); ++i) {
+            if (!Character.isDigit(string.charAt(i))) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 }
