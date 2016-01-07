@@ -12,9 +12,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int taskNumber = 2;
-        performTask(taskNumber);
-        performTask(1);
+        for (int taskNumber = 1; taskNumber < 6; ++taskNumber) {
+            performTask(taskNumber);
+        }
     }
 
     public static void performTask(int taskNumber) {
@@ -29,6 +29,23 @@ public class Main {
                 char ch = InputDataUtils.getInputCharSymbol();
                 System.out.println(ch + " " + (Character.isDigit(ch)));
                 break;
+            case 3:
+                System.out.println("Task 3:");
+                int[] array5 = InputDataUtils.getInputIntArray();
+                TriangleUtils.getCountRightTriangles(array5);
+                break;
+            case 4:
+                System.out.println("Task 4:");
+                int[] array2 = InputDataUtils.getInputIntArray();
+                TriangleUtils.getCountIsoscelesTriangles(array2);
+                break;
+            case 5:
+                System.out.println("Task 5:");
+                int[] array1 = InputDataUtils.getInputIntArray();
+                TriangleUtils.getCountEquilateralTriangles(array1);
+                System.out.println(TriangleUtils.
+                        getCountEquilateralTrianglesWithAnyData(array1));
+                break;
             case 14:
                 System.out.println("Task 14:");
                 String myString14 = InputDataUtils.getInputString();
@@ -36,16 +53,8 @@ public class Main {
                 System.out.println(StringDataUtils
                         .checkStringIsNumber(myString14));
                 break;
-            case 4:
-                System.out.println("Test 4:");
-                
-                break;
-            case 5:
-                System.out.println("Test 5:");
-                
-                break;
             default:
-                System.out.println("3 tasks have been implemented."
+                System.out.println("6 tasks have been implemented."
                         + " There is more to come");
         }
     }

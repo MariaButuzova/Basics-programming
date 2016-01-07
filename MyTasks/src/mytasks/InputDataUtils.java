@@ -27,6 +27,11 @@ public class InputDataUtils {
         return string.charAt(random.nextInt(string.length()));
     }
     
+    public static int[] getInputIntArray() {
+        int[] array = {1,3,3,4,4,4,5,3,4,78,78,78,5,1,6,5,5,5};
+        return array;
+    }
+    
 /*    public static String inputStringByConsole() {
         Scanner in = new Scanner(System.in);
         System.out.println("Input string and press Enter: ");
