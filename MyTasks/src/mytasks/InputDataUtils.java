@@ -15,8 +15,7 @@ public class InputDataUtils {
     
     public static String getInputString() {
         Random random = new Random();
-        String string[] = {"1Symbols", "12345", "1 2 3 3 2 ", "1!QW@", "1cAccc",
-            "1 "};
+        String string[] = {"  -  67777.   "};
         return string[random.nextInt(string.length)];
     }
     
@@ -40,30 +39,5 @@ public class InputDataUtils {
         }
         return array;
     }
-    
-    public static int[] getImputIntArrayByConsole() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter number of elements: ");
-        int number = in.nextInt();
-        int[] array = new int[number];
-        System.out.println("Enter " + number + " integers");
-        for (int i = 0; i < array.length; i++) {
-            array[i] = in.nextInt();
-        }
-        return array;
-    }
-    
-    public static String getInputStringByConsole() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Input string and press Enter: ");
-        String string = in.next();
-        return string;
-    }
-    
-    public static char getInputCharByConsole() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Input any symbol and press Enter: ");
-        String string  = in.next();
-        return string.charAt(0);
-    }
+ 
 }

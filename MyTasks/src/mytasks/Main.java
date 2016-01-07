@@ -12,9 +12,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        for (int taskNumber = 1; taskNumber < 6; ++taskNumber) {
+       /* for (int taskNumber = 1; taskNumber < 6; ++taskNumber) {
             performTask(taskNumber);
-        }
+        }*/
         performTask(14);
     }
 
@@ -51,7 +51,7 @@ public class Main {
                         getCountEquilateralTrianglesWithAnyData(array));
                 break;
             case 14:
-                myString = InputDataUtils.getInputStringByConsole();
+                myString = InputDataUtils.getInputString();
                 System.out.println(myString);
                 System.out.println(StringDataUtils
                         .checkStringIsNumber(myString));
