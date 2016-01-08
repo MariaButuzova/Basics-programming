@@ -16,7 +16,7 @@ public class InputDataUtils {
     public static String getInputString() {
         Random random = new Random();
         String string[] = {"  -  67777.   ", null, "--7878787", " 0987", "-  .", 
-            ".", "         ", "9999.", "9.9", "9.9.9"};
+            ".", "         ", "9999.", "9.9", "9.9.9", "@-1"};
         return string[random.nextInt(string.length)];
     }
     
@@ -36,7 +36,7 @@ public class InputDataUtils {
         Random random = new Random();
         int[] array = new int[number];
         for (int i = 0; i < array.length; ++i) {
-            array[i] = random.nextInt(20) + 1;
+            array[i] = random.nextInt(15) + 1;
         }
         return array;
     }

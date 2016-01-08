@@ -20,8 +20,7 @@ public class StringDataUtils {
         if (string.length() == 0) {
             return false;
         }
-        if ((string.charAt(0) != '-') && (!Character
-                .isDigit(string.charAt(0)))) {
+        if ((string.charAt(0) != '-') && (!Character.isDigit(string.charAt(0)))) {
             return false;
         }
         int i = 1;

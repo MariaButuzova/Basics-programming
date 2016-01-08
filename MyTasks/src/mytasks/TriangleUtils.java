@@ -9,6 +9,7 @@ import java.util.*;
 public class TriangleUtils {
     
     public static boolean isTriangle(int a, int b, int c) {
+        if (a <= 0 || b <= 0 || c <= 0) return false;
         return ((a < b + c) && (b < c + a) && (c < a + b));
     }
     
@@ -30,6 +31,9 @@ public class TriangleUtils {
     }
     
     public static boolean isEquilateralTriangle(int a, int b, int c) {
+        if (!isTriangle(a, b, c)) {
+            return false;
+        }
         return (a == b && b == c);
     }
     
@@ -59,8 +63,6 @@ public class TriangleUtils {
         System.out.println("Data should have the next format:\n"
                 + "\"a[0],b[0],c[0],a[1],b[1],c[1]....n where a[n], b[n], c[n] are sides "
                 + "of [n] triangle");
-        System.out.println("Data have been verified.\n"
-                + "Well, lets start checking triangles.");       
         return true;
     }
     
@@ -84,56 +86,7 @@ public class TriangleUtils {
         System.out.println("Actual count of triangles: " + allCount);
         return allCount;
     }
-         
-    public static int getCountTriangles(int[] array){
-        if (!checkTrianglesData(array)) {
-            System.out.println("The count of triangles = 0");
-            return 0;
-        }
-        System.out.println("Checking triangles:");
-        int count = 0;
-        for (int i = 0; i < array.length; i += 3) {
-            if (isTriangle(array[i], array[i + 1], 
-                    array[i + 2])) {
-                ++count;
-            }                            
-        }
-        System.out.println("Count of triangles: " + count);
-        return count;
-    }
-    
-    public static int getCountRightTriangles(int[] array){
-        if (!checkTrianglesData(array)) {
-            return 0;
-        }
-        // Checking right triangles
-        int count = 0;
-        for (int i = 0; i < array.length; i += 3) {
-            if (isRightTriangle(array[i], array[i + 1], 
-                    array[i + 2])) {
-                ++count;
-            }                            
-        }
-        System.out.println("Count of right triangles: " + count);
-        return count;
-    }
-    
-    public static int getCountIsoscelesTriangles(int[] array){
-        if (!checkTrianglesData(array)) {
-            return 0;
-        }
-        //System.out.println("Checking isosceles triangles:");
-        int count = 0;
-        for (int i = 0; i < array.length; i += 3) {
-            if (isIsoscelesTriangle(array[i], array[i + 1],
-                    array[i + 2])) {
-                ++count;
-            }
-        }
-        System.out.println("Count of isosceles triangles: " + count);
-        return count;
-    }
-    
+
     public static int getCountEquilateralTriangles(int[] array){
         if (!checkTrianglesData(array)) {
             return 0;
