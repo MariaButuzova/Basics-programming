@@ -13,10 +13,13 @@ public class StringDataUtils {
     }
    
     public static boolean checkStringIsNumber(String string) {
-        if (string == null || string.length() == 0) {
+        if (string == null) {
             return false;
         }
         string = string.trim();
+        if (string.length() == 0) {
+            return false;
+        }
         if ((string.charAt(0) != '-') && (!Character
                 .isDigit(string.charAt(0)))) {
             return false;
@@ -25,15 +28,15 @@ public class StringDataUtils {
         while (string.charAt(i) == ' ') {
             ++i;
         }
-        System.out.println("++i = " + i);
+        if (i == string.length() - 1 && string.charAt(i) == '.') {
+            return false;
+        }
         boolean point = true;
         for (; i < string.length(); ++i) {
-            System.out.println(string.charAt(i));
             if (!point && string.charAt(i) == '.') {
                 return false;
             }
             if (!Character.isDigit(string.charAt(i)) && (string.charAt(i) != '.')) {
-                System.out.println("false -- " + string.charAt(i));
                 return false;
             }
             if (string.charAt(i) == '.') {

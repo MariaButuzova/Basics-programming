@@ -15,7 +15,8 @@ public class InputDataUtils {
     
     public static String getInputString() {
         Random random = new Random();
-        String string[] = {"  -  67777.   "};
+        String string[] = {"  -  67777.   ", null, "--7878787", " 0987", "-  .", 
+            ".", "         ", "9999.", "9.9", "9.9.9"};
         return string[random.nextInt(string.length)];
     }
     
