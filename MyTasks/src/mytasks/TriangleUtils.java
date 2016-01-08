@@ -66,10 +66,10 @@ public class TriangleUtils {
         return true;
     }
     
-    public static int getCountEquilateralTrianglesWithAnyData(int[] array) {
+    public static int getCountEquilateralTrianglesAnyData(int[] array) {
         Arrays.sort(array);
         int count = 1;
-        int allCount = 0;
+        int actualCount = 0;
         for (int i = 0, j = 1; j < array.length; ++j) {
             if ((array[j] != array[i]) || (j == (array.length - 1))) {
                 if ((count / 3 > 0) && (array[i] > 0)) {
@@ -77,21 +77,20 @@ public class TriangleUtils {
                             + array[i] + " : " + count / 3);
                 }
                 i = j;
-                allCount += count / 3;
+                actualCount += count / 3;
                 count = 0;
             }
             ++count;
         }
         System.out.println("Estimated count of triangles: " + (array.length/3));
-        System.out.println("Actual count of triangles: " + allCount);
-        return allCount;
+        System.out.println("Actual count of triangles: " + actualCount);
+        return actualCount;
     }
 
     public static int getCountEquilateralTriangles(int[] array){
         if (!checkTrianglesData(array)) {
-            return 0;
+            return (getCountEquilateralTrianglesAnyData(array));    
         }
-        //System.out.println("Checking equilateral triangles:");
         int count = 0;
         for (int i = 0; i < array.length; i += 3) {
             if (isEquilateralTriangle(array[i], array[i + 1],
@@ -99,7 +98,6 @@ public class TriangleUtils {
                 ++count;
             }
         }
-        System.out.println("Count of equilateral triangles: " + count);
         return count;
     }
 
