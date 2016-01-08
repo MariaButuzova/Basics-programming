@@ -1,6 +1,7 @@
 package mytasks;
 
 import java.util.*;
+import static mytasks.DigitsUtils.INPUT_DIGITS;
 
 /**
  *
@@ -10,7 +11,7 @@ public class InputDataUtils {
     
     public static int getIntRandom() {
         Random random = new Random();
-        return (random.nextInt(100) + 1);
+        return (random.nextInt(101) - 50);
     }
     
     public static String getString() {
@@ -48,6 +49,17 @@ public class InputDataUtils {
             array[i] = random.nextInt(3) + 3;
         }
         return array;
+    }
+    
+    public static int[] getDigitsArrayRandom() {
+        Random random = new Random();
+        int number = random.nextInt(8999) + 1000;
+        int[] digitsArray = new int[INPUT_DIGITS];        
+        for (int i = digitsArray.length - 1; i >= 0; ++i) {
+            digitsArray[i] = number % 10;
+            number /= 10;
+        }
+        return digitsArray;
     }
  
 }

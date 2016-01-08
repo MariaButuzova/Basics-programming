@@ -16,7 +16,7 @@ public class Main {
             performTask(taskNumber);
         }*/
             
-        performTask(6);
+        performTask(8);
         
     }
 
@@ -73,16 +73,46 @@ public class Main {
                         getCountEquilateralTriangles(array));
                 break;
             case 6:
-                System.out.println("false == " + NumberUtils.isXMultipleY(10, 0));
-                System.out.println("true == " + NumberUtils.isXMultipleY(0, 10));
-                System.out.println("true == " + NumberUtils.isXMultipleY(10, 10));
-                System.out.println("false == " + NumberUtils.isXMultipleY(10, 0.));
-                System.out.println("false == " + NumberUtils.isXMultipleY(10.1, 10.2));
-                System.out.println("false == " + NumberUtils.isXMultipleY(0., 0.));
-                System.out.println("false == " + NumberUtils.isXMultipleY(.0, .0));
-                System.out.println("true == " + NumberUtils.isXMultipleY(0.1, 0.1));
-                System.out.println("false == " + NumberUtils.isXMultipleY(1, 10));
-                System.out.println("true == " + NumberUtils.isXMultipleY(10, 5.));
+                System.out.println("false == "
+                        + NumberUtils.isXMultipleY(10, 0));
+                System.out.println("true == "
+                        + NumberUtils.isXMultipleY(0, 10));
+                System.out.println("true == "
+                        + NumberUtils.isXMultipleY(10, 10));
+                System.out.println("false == "
+                        + NumberUtils.isXMultipleY(10, 0.));
+                System.out.println("false == "
+                        + NumberUtils.isXMultipleY(10.1, 10.2));
+                System.out.println("false == "
+                        + NumberUtils.isXMultipleY(0., 0.));
+                System.out.println("false == "
+                        + NumberUtils.isXMultipleY(.0, .0));
+                System.out.println("true == "
+                        + NumberUtils.isXMultipleY(0.1, 0.1));
+                System.out.println("false == "
+                        + NumberUtils.isXMultipleY(1, 10));
+                System.out.println("true == "
+                        + NumberUtils.isXMultipleY(10, 5.));
+                break;
+            case 7:
+                a = InputDataUtils.getIntRandom();
+                b = InputDataUtils.getIntRandom();
+                int condition = NumberUtils.checkNumbersEvenOrOdd(a, b);
+                switch (condition) {
+                    case 0:
+                        System.out.println(a + " isn't matched " + b);
+                        break;
+                    case 1:
+                        System.out.println(a + " and " + b + " are odd");
+                        break;
+                    case 2:
+                        System.out.println(a + " and " + b + " are even");
+                        break;
+                }
+                break;
+            case 8:
+                System.out.println(12345 % 10);
+                System.out.println(DigitsUtils.checkDigitsData(-1234));
                 break;
             case 14:
                 string = InputDataUtils.getString();
