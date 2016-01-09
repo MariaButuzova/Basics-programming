@@ -50,20 +50,9 @@ public class InputDataUtils {
         return array;
     }
     
-    public static int[] getDigitsArray() {
+    public static int getDigitsNumber() {
         Random random = new Random();
-        int number = random.nextInt(8999) + 1000;
-        return getDigitsArray(number);
+        return (random.nextInt(8999) + 1000);
     }
-    
-    public static int[] getDigitsArray(int number) {
-        number = Math.abs(number);
-        String string = String.valueOf(number);
-        int[] digitsArray = new int[string.length()];        
-        for (int i = digitsArray.length - 1; i >= 0; --i) {
-            digitsArray[i] = number % 10;
-            number /= 10;
-        }
-        return digitsArray;
-    }
+        
 }

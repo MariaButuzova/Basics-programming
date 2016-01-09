@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author Maria
  */
 public class Main {
-
+    
     /**
      * @param args the command line arguments
      */
@@ -19,12 +19,13 @@ public class Main {
             performTask(taskNumber);
         }
     }
-
+    
     public static void performTask(int n) {
         int a;
         int b;
         int c;
         int[] array;
+        int number;
         String string;
         char ch;
         System.out.println("Performing task #" + n);
@@ -106,33 +107,26 @@ public class Main {
                 }
                 break;
             case 8:
-                array = InputDataUtils.getDigitsArray(); 
-                System.out.println(Arrays.toString(array));
-                System.out.println(DigitsUtils.getDigitsSum(array));
-                array = InputDataUtils.getDigitsArray(12);
-                System.out.println(Arrays.toString(array));
-                int sum = DigitsUtils.getDigitsSum(array);
+                number = InputDataUtils.getDigitsNumber();
+                System.out.println(number);
+                int sum = DigitsUtils.getDigitsSum(number);
                 System.out.println(sum + " isEven? "
                         + NumberUtils.isEvenNumber(sum));
                 break;
             case 9:
-                array = InputDataUtils.getDigitsArray(1010);
-                System.out.println(Arrays.toString(array));
-                System.out.println(DigitsUtils.isPalindrome(array));
+                number = InputDataUtils.getDigitsNumber();
+                System.out.println(number);
+                System.out.println(DigitsUtils.isPalindrome(number));
                 break;
             case 10:
-                array = InputDataUtils.getDigitsArray(34569333);
-                if (!NumberUtils.isEvenNumber(array.length)) {
-                    System.out.println("Digitds count should be even");
-                } else {
-                    System.out.println(Arrays.toString(array));
-                    System.out.println(DigitsUtils.isEvenSumHalfDigits(array));
-                }
+                number = InputDataUtils.getDigitsNumber();
+                System.out.println(number);
+                System.out.println(DigitsUtils.isEvenSumHalfDigits(number));
                 break;
             case 11:
-                array = InputDataUtils.getDigitsArray(77);
-                System.out.println(Arrays.toString(array));
-                System.out.println(DigitsUtils.isNotLessDigit(array));
+                number = InputDataUtils.getDigitsNumber();
+                System.out.println(number);
+                System.out.println(DigitsUtils.isNotLessDigit(number));
                 break;
             case 12:
                 System.out.println("It will be done later");
