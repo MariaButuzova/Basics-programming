@@ -53,8 +53,6 @@ public class TriangleUtils {
     
     public static boolean checkTrianglesData(int[] array) {
         if (!checkTrianglesDataCount(array)) {
-            System.out.println("The count of values isn't multiple 3.");
-            System.out.println("Data couldn't be used for triangles.");
             return false;
         }
         if (!checkTrianglesDataValues(array)) {
@@ -89,6 +87,7 @@ public class TriangleUtils {
 
     public static int getCountEquilateralTriangles(int[] array){
         if (!checkTrianglesData(array)) {
+            System.out.println("Let's get count with any data:");
             return (getCountEquilateralTrianglesAnyData(array));    
         }
         int count = 0;

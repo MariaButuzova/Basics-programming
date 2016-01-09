@@ -2,6 +2,9 @@ package mytasks;
 
 //import java.util.*;
 
+import java.util.Arrays;
+
+
 /**
  *
  * @author Maria
@@ -57,14 +60,13 @@ public class Main {
                 }
                 break;
             case 5:
-                array = InputDataUtils.getIntArray();
+                array = InputDataUtils.getIntArrayRandom();
                 for (int i : array) {
                     System.out.println(i);
                 }
                 System.out.println(TriangleUtils.
                         getCountEquilateralTriangles(array));
-                System.out.println("get the count of equilateral triangles"
-                        + "with any data:");
+                System.out.println("If no triangles data");
                 array = InputDataUtils.getIntArrayRandom(50);
                 for (int i : array) {
                     System.out.println(i);
@@ -111,8 +113,12 @@ public class Main {
                 }
                 break;
             case 8:
-                System.out.println(12345 % 10);
-                System.out.println(DigitsUtils.checkDigitsData(-1234));
+                array = InputDataUtils.getDigitsArray(); 
+                System.out.println(Arrays.toString(array));
+                System.out.println(DigitsUtils.getDigitsSum(array));
+                array = InputDataUtils.getDigitsArray(-1111);
+                System.out.println(Arrays.toString(array));
+                System.out.println(DigitsUtils.getDigitsSum(array));
                 break;
             case 14:
                 string = InputDataUtils.getString();
