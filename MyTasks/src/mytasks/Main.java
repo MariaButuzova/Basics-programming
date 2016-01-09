@@ -19,7 +19,7 @@ public class Main {
             performTask(taskNumber);
         }*/
             
-        performTask(9);
+        performTask(10);
         
     }
 
@@ -116,14 +116,25 @@ public class Main {
                 array = InputDataUtils.getDigitsArray(); 
                 System.out.println(Arrays.toString(array));
                 System.out.println(DigitsUtils.getDigitsSum(array));
-                array = InputDataUtils.getDigitsArray(1111);
+                array = InputDataUtils.getDigitsArray(12);
                 System.out.println(Arrays.toString(array));
-                System.out.println(DigitsUtils.getDigitsSum(array));
+                int sum = DigitsUtils.getDigitsSum(array);
+                System.out.println(sum + " isEven? "
+                        + NumberUtils.isEvenNumber(sum));
                 break;
             case 9:
                 array = InputDataUtils.getDigitsArray(1010);
                 System.out.println(Arrays.toString(array));
                 System.out.println(DigitsUtils.isPalindrome(array));
+                break;
+            case 10:
+                array = InputDataUtils.getDigitsArray(34569333);
+                if (!NumberUtils.isEvenNumber(array.length)) {
+                    System.out.println("Digitds count should be even");
+                } else {
+                    System.out.println(Arrays.toString(array));
+                    System.out.println(DigitsUtils.isEvenSumHalfDigits(array));
+                }
                 break;
             case 14:
                 string = InputDataUtils.getString();
