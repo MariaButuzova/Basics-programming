@@ -19,7 +19,7 @@ public class Main {
             performTask(taskNumber);
         }*/
             
-        performTask(8);
+        performTask(9);
         
     }
 
@@ -116,9 +116,14 @@ public class Main {
                 array = InputDataUtils.getDigitsArray(); 
                 System.out.println(Arrays.toString(array));
                 System.out.println(DigitsUtils.getDigitsSum(array));
-                array = InputDataUtils.getDigitsArray(-1111);
+                array = InputDataUtils.getDigitsArray(1111);
                 System.out.println(Arrays.toString(array));
                 System.out.println(DigitsUtils.getDigitsSum(array));
+                break;
+            case 9:
+                array = InputDataUtils.getDigitsArray(1010);
+                System.out.println(Arrays.toString(array));
+                System.out.println(DigitsUtils.isPalindrome(array));
                 break;
             case 14:
                 string = InputDataUtils.getString();
