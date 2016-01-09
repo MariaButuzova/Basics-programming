@@ -15,12 +15,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       /* for (int taskNumber = 1; taskNumber < 6; ++taskNumber) {
+        for (int taskNumber = 1; taskNumber < 15; ++taskNumber) {
             performTask(taskNumber);
-        }*/
-            
-        performTask(11);
-        
+        }
     }
 
     public static void performTask(int n) {
@@ -61,16 +58,12 @@ public class Main {
                 break;
             case 5:
                 array = InputDataUtils.getIntArrayRandom();
-                for (int i : array) {
-                    System.out.println(i);
-                }
+                System.out.println(Arrays.toString(array));
                 System.out.println(TriangleUtils.
                         getCountEquilateralTriangles(array));
                 System.out.println("If no triangles data");
                 array = InputDataUtils.getIntArrayRandom(50);
-                for (int i : array) {
-                    System.out.println(i);
-                }
+                System.out.println(Arrays.toString(array));
                 System.out.println(TriangleUtils.
                         getCountEquilateralTriangles(array));
                 break;
@@ -141,13 +134,19 @@ public class Main {
                 System.out.println(Arrays.toString(array));
                 System.out.println(DigitsUtils.isNotLessDigit(array));
                 break;
+            case 12:
+                System.out.println("It will be done later");
+                break;
+            case 13:
+                System.out.println("It will be done after task 12");
+                break;
             case 14:
                 string = InputDataUtils.getString();
                 System.out.println(string);
                 System.out.println(StringDataUtils.checkStringIsNumber(string));
                 break;
             default:
-                System.out.println("6 tasks have been implemented."
+                System.out.println("12 tasks have been implemented."
                         + " There is more to come");
         }
     }
