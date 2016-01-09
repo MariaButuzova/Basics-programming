@@ -19,7 +19,7 @@ public class Main {
             performTask(taskNumber);
         }*/
             
-        performTask(10);
+        performTask(11);
         
     }
 
@@ -135,6 +135,11 @@ public class Main {
                     System.out.println(Arrays.toString(array));
                     System.out.println(DigitsUtils.isEvenSumHalfDigits(array));
                 }
+                break;
+            case 11:
+                array = InputDataUtils.getDigitsArray(77);
+                System.out.println(Arrays.toString(array));
+                System.out.println(DigitsUtils.isNotLessDigit(array));
                 break;
             case 14:
                 string = InputDataUtils.getString();
