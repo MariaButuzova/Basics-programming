@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         for (int taskNumber = 1; taskNumber < 15; ++taskNumber) {
             performTask(taskNumber);
-        }
+        }    
     }
     
     public static void performTask(int n) {
@@ -129,10 +129,22 @@ public class Main {
                 System.out.println(DigitsUtils.isNotLessDigit(number));
                 break;
             case 12:
-                System.out.println("It will be done later");
+                QuadraticEquation myEquation = new QuadraticEquation();
+                System.out.println("a == " + myEquation.a
+                        + "; b == " + myEquation.b
+                        + "; c == " + myEquation.c);
+                System.out.println(Arrays.toString(myEquation.getRoots()));
                 break;
             case 13:
-                System.out.println("It will be done after task 12");
+                QuadraticEquation myEquationForEven = new QuadraticEquation();
+                System.out.println("a == " + myEquationForEven.a
+                        + "; b == " + myEquationForEven.b
+                        + "; c == " + myEquationForEven.c);
+                System.out.println(Arrays.toString(myEquationForEven.getRoots()));
+                double[] arrayRoots = myEquationForEven.getRoots();
+                for (int i = 0; i < arrayRoots.length; ++i) {
+                    System.out.println(NumberUtils.isEvenNumber(arrayRoots[i]));
+                }
                 break;
             case 14:
                 string = InputDataUtils.getString();

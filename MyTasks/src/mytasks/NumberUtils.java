@@ -27,6 +27,10 @@ public class NumberUtils {
     public static boolean isEvenNumber(int x) {
         return (x % 2 == 0);
     }
+    
+    public static boolean isEvenNumber(double x) {
+        return (x % 2 == 0);
+    }
   
     public static int checkNumbersEvenOrOdd(int x, int y) {
         if (isEvenNumber(x) != isEvenNumber(y)) return 0;
