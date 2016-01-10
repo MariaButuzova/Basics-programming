@@ -10,29 +10,28 @@ public class QuadraticEquation {
     final int a;
     final int b;
     final int c;
-    final double discriminant;
+    final static int COUNT_RANDOM_NUMBERS = 41; //there are 41 elements in range
+    final static int FIRST_RANDOM_NUMBER = -20; //starts range
     private double[] arrayRoots;
     
     QuadraticEquation() {
         Random random = new Random();
         a = getNonZeroRandom();
-        b = random.nextInt(41) - 20;
-        c = random.nextInt(41) - 20;
-        discriminant = calculateDiscriminant();
+        b = random.nextInt(COUNT_RANDOM_NUMBERS) + FIRST_RANDOM_NUMBER; // [-20; 20]
+        c = random.nextInt(COUNT_RANDOM_NUMBERS) + FIRST_RANDOM_NUMBER;
     }
     
     QuadraticEquation(int a, int b, int c) {
         this.a = a; //a != 0
         this.b = b;
         this.c = c;
-        discriminant = calculateDiscriminant();
     }
     
     private static int getNonZeroRandom() {
         Random random = new Random();
-        int nonZero = random.nextInt(41) - 20;
+        int nonZero = 0;
         while (nonZero == 0) {
-            nonZero = random.nextInt(41) - 20;
+            nonZero = random.nextInt(COUNT_RANDOM_NUMBERS) + FIRST_RANDOM_NUMBER;
         }
         return nonZero;
     }
@@ -42,19 +41,17 @@ public class QuadraticEquation {
     }
   
     public double[] getRoots() {
+        double discriminant = calculateDiscriminant();
+        arrayRoots = new double[0];
         if (discriminant > 0) {
             double d = Math.sqrt(discriminant);
             arrayRoots = new double[2];
             arrayRoots[0] = (-b - d)/(2*a);
             arrayRoots[1] = (-b + d)/(2*a);
-            return arrayRoots;
-        }
-        if (discriminant == 0) {
+        } else if (discriminant == 0) {
             arrayRoots = new double[1];
             arrayRoots[0] = -b/(2*a);
-            return arrayRoots;
         }
-        arrayRoots = new double[0];
         return arrayRoots;
     }
   
