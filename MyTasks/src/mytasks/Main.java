@@ -1,9 +1,6 @@
 package mytasks;
 
-//import java.util.*;
-
-import java.util.Arrays;
-
+import java.util.*;
 
 /**
  *
@@ -152,9 +149,12 @@ public class Main {
                 System.out.println(StringDataUtils.checkStringIsNumber(string));
                 break;
             case 15:
-                array = InputDataUtils.getIntArrayRandom(2);
+                double[] dArray = InputDataUtils.getDoubleArrayRandom(23);
+                System.out.println(Arrays.toString(dArray));
+                System.out.println(ArrayUtils.getMaxIndexes(dArray));
+                array = InputDataUtils.getIntArrayRandom(20);
                 System.out.println(Arrays.toString(array));
-                System.out.println(Arrays.toString(ArrayUtils.getMaxIndexes(array)));
+                System.out.println(ArrayUtils.getMaxIndexes(array));
                 break;
             default:
                 System.out.println("12 tasks have been implemented."

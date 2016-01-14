@@ -50,6 +50,15 @@ public class InputDataUtils {
         return array;
     }
     
+    public static double[] getDoubleArrayRandom(int number) {
+        Random random = new Random();
+        double[] array = new double[number];
+        for (int i = 0; i < array.length; ++i) {
+            array[i] = random.nextDouble()*21 + -10;
+        }
+        return array;
+    }
+    
     public static int getDigitsNumber() {
         Random random = new Random();
         return (random.nextInt(8999) + 1000);

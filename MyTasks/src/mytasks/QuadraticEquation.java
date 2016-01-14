@@ -10,14 +10,15 @@ public class QuadraticEquation {
     final int a;
     final int b;
     final int c;
-    final static int MAX_RANDOM_NUMBER = 20;
+    final static int MIN_RANGE = -20;
+    final static int MAX_RANGE = 20;
     private double[] arrayRoots;
     
     QuadraticEquation() {
         Random random = new Random();
         a = getNonZeroRandom();
-        b = random.nextInt(MAX_RANDOM_NUMBER*2 + 1) - MAX_RANDOM_NUMBER; // [-20; 20]
-        c = random.nextInt(MAX_RANDOM_NUMBER*2 + 1) - MAX_RANDOM_NUMBER;
+        b = random.nextInt((MAX_RANGE - MIN_RANGE) + 1) + MIN_RANGE; // [-20; 20]
+        c = random.nextInt((MAX_RANGE - MIN_RANGE) + 1) + MIN_RANGE;
     }
     
     QuadraticEquation(int a, int b, int c) {
@@ -30,8 +31,7 @@ public class QuadraticEquation {
         Random random = new Random();
         int nonZero = 0;
         while (nonZero == 0) {
-            nonZero = random.nextInt(MAX_RANDOM_NUMBER*2 + 1)
-                    - MAX_RANDOM_NUMBER;
+            nonZero = random.nextInt((MAX_RANGE - MIN_RANGE) + 1) + MIN_RANGE;
         }
         return nonZero;
     }
