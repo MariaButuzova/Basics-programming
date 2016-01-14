@@ -15,7 +15,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        for (int taskNumber = 1; taskNumber < 15; ++taskNumber) {
+        for (int taskNumber = 1; taskNumber < 16; ++taskNumber) {
             performTask(taskNumber);
         }    
     }
@@ -150,6 +150,11 @@ public class Main {
                 string = InputDataUtils.getString();
                 System.out.println(string);
                 System.out.println(StringDataUtils.checkStringIsNumber(string));
+                break;
+            case 15:
+                array = InputDataUtils.getIntArrayRandom(2);
+                System.out.println(Arrays.toString(array));
+                System.out.println(Arrays.toString(ArrayUtils.getMaxIndexes(array)));
                 break;
             default:
                 System.out.println("12 tasks have been implemented."
