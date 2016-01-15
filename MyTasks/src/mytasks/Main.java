@@ -12,9 +12,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        for (int taskNumber = 1; taskNumber < 16; ++taskNumber) {
+        /*for (int taskNumber = 1; taskNumber < 16; ++taskNumber) {
             performTask(taskNumber);
-        }    
+        }*/
+        Task1 task1 = new Task1();
+        task1.performTask();
     }
     
     public static void performTask(int n) {
