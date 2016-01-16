@@ -1,7 +1,5 @@
 package mytasks;
 
-import java.util.*;
-
 /**
  *
  * @author Maria
@@ -12,14 +10,19 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*for (int taskNumber = 1; taskNumber < 16; ++taskNumber) {
-            performTask(taskNumber);
-        }*/
-        Task1 task1 = new Task1();
+        Task task1 = new Task1();
+        Task task2 = new Task2();
+        Task task3 = new Task3();
+        Task task4 = new Task4();
+        Task task5 = new Task5();
         task1.performTask();
+        task2.performTask();
+        task3.performTask();
+        task4.performTask();
+        task5.performTask();
     }
     
-    public static void performTask(int n) {
+/*    public static void performTask(int n) {
         int a;
         int b;
         int c;
@@ -43,7 +46,7 @@ public class Main {
                         + "; b = " + (b = 3)
                         + "; c = " + (c = 4));
                 System.out.println("isRightTriangle? "
-                        + TriangleUtils.isRightTriangle(a, b, c));
+                        + Triangles.isRightTriangle(a, b, c));
                 break;
             case 4:
                 array = InputDataUtils.getIntArrayRandom(50);
@@ -52,19 +55,19 @@ public class Main {
                             + "; b = " + array[i + 1]
                             + "; c = " + array[i + 2]);
                     System.out.println("isIsoscelesTriangle? "
-                            + TriangleUtils.isIsoscelesTriangle(array[i],
+                            + Triangles.isIsoscelesTriangle(array[i],
                                     array[i + 1], array[i + 2]));
                 }
                 break;
             case 5:
                 array = InputDataUtils.getIntArrayRandom();
                 System.out.println(Arrays.toString(array));
-                System.out.println(TriangleUtils.
+                System.out.println(Triangles.
                         getCountEquilateralTriangles(array));
                 System.out.println("If no triangles data");
                 array = InputDataUtils.getIntArrayRandom(50);
                 System.out.println(Arrays.toString(array));
-                System.out.println(TriangleUtils.
+                System.out.println(Triangles.
                         getCountEquilateralTriangles(array));
                 break;
             case 6:
@@ -163,5 +166,6 @@ public class Main {
                         + " There is more to come");
         }
     }
+*/
 
 }

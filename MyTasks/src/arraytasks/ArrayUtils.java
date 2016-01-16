@@ -1,4 +1,4 @@
-package mytasks;
+package arraytasks;
 
 import java.util.*;
 
@@ -6,9 +6,9 @@ import java.util.*;
  *
  * @author Maria
  */
-public class ArrayUtils {
-    
-    public static ArrayList<Integer> getMaxIndexes(int[] array) {
+abstract class ArrayUtils {
+        
+    protected static ArrayList<Integer> getMaxIndexes(int[] array) {
         ArrayList maxIndexes = new ArrayList();
         if (array == null || array.length == 0) {
             return maxIndexes;
@@ -27,7 +27,7 @@ public class ArrayUtils {
         return maxIndexes;
     }
     
-    public static ArrayList<Integer> getMaxIndexes(double[] array)  {
+    protected static ArrayList<Integer> getMaxIndexes(double[] array)  {
         ArrayList maxIndexes = new ArrayList();
         if (array == null || array.length == 0) {
             return maxIndexes;
@@ -45,5 +45,4 @@ public class ArrayUtils {
         }
         return maxIndexes;
     }
-
 }

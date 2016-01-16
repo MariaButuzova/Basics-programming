@@ -32,29 +32,48 @@ public class InputDataUtils {
         return array;
     }
     
+    /**
+     *
+     * @param number
+     * @return
+     */
     public static int[] getIntArrayRandom(int number) {
         Random random = new Random();
         int[] array = new int[number];
         for (int i = 0; i < array.length; ++i) {
-            array[i] = random.nextInt(15) - 3;
+            array[i] = random.nextInt();
         }
         return array;
     }
     
-    public static int[] getIntArrayRandom() {
+    /**
+     * method getIntArrayRandom
+     * @param min
+     * @param max
+     * @param number
+     * @return 
+     */
+    public static int[] getIntArrayRandom(int min, int max, int number) {
         Random random = new Random();
-        int[] array = new int[6];
+        int[] array = new int[number];
         for (int i = 0; i < array.length; ++i) {
-            array[i] = random.nextInt(3) + 3;
+            array[i] = random.nextInt((max - min) +1) + min;
         }
         return array;
     }
     
-    public static double[] getDoubleArrayRandom(int number) {
+    /**
+     *
+     * @param min
+     * @param max
+     * @param number
+     * @return
+     */
+    public static double[] getDoubleArrayRandom(int min, int max, int number) {
         Random random = new Random();
         double[] array = new double[number];
         for (int i = 0; i < array.length; ++i) {
-            array[i] = random.nextDouble()*21 + -10;
+            array[i] = random.nextDouble()*((max - min) +1) + min;
         }
         return array;
     }
