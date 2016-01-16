@@ -10,7 +10,7 @@ public class InputDataUtils {
     
     public static int getIntRandom() {
         Random random = new Random();
-        return (random.nextInt(101) - 50);
+        return (random.nextInt(10));
     }
     
     public static String getString() {
@@ -50,11 +50,11 @@ public class InputDataUtils {
      * method getIntArrayRandom
      * @param min
      * @param max
-     * @param number
      * @return 
      */
-    public static int[] getIntArrayRandom(int min, int max, int number) {
+    public static int[] getIntArrayRandom(int min, int max) {
         Random random = new Random();
+        int number = getIntRandom();
         int[] array = new int[number];
         for (int i = 0; i < array.length; ++i) {
             array[i] = random.nextInt((max - min) +1) + min;
@@ -66,11 +66,11 @@ public class InputDataUtils {
      *
      * @param min
      * @param max
-     * @param number
      * @return
      */
-    public static double[] getDoubleArrayRandom(int min, int max, int number) {
+    public static double[] getDoubleArrayRandom(int min, int max) {
         Random random = new Random();
+        int number = getIntRandom();
         double[] array = new double[number];
         for (int i = 0; i < array.length; ++i) {
             array[i] = random.nextDouble()*((max - min) +1) + min;

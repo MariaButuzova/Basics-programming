@@ -13,8 +13,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] intArray = InputDataUtils.getIntArrayRandom(-1, 1, 10);
-        double[] doubleArray = InputDataUtils.getDoubleArrayRandom(-1, 1, 30);
+        int[] intArray = InputDataUtils.getIntArrayRandom(-1, 1);
+        double[] doubleArray = InputDataUtils.getDoubleArrayRandom(-1, 1);
         System.out.println(Arrays.toString(intArray));
         System.out.println(ArrayUtils.getMaxIndexes(intArray));
         System.out.println(Arrays.toString(doubleArray));
