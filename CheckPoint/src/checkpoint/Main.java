@@ -18,8 +18,8 @@ public class Main {
         int firstNumber;
         int secondNumber;
         firstNumber = InputDataUtils.getFirstNumber();
-        secondNumber = InputDataUtils.getSecondNumber();
         do {
+            secondNumber = InputDataUtils.getSecondNumber();
             firstNumber -= secondNumber;
             CheckpointUtils.moveToConsole(firstNumber, secondNumber);
         } while ((firstNumber > 999));
