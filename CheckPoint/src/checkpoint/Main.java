@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package checkpoint;
 
 /**
  *
- * @author solenko
+ * @author Maria
  */
 public class Main {
 
@@ -17,12 +12,22 @@ public class Main {
     public static void main(String[] args) {
         int firstNumber;
         int secondNumber;
+        int i = 1;
         firstNumber = InputDataUtils.getFirstNumber();
         do {
+            System.out.println("Iteration #" + i);
+            ++i;
             secondNumber = InputDataUtils.getSecondNumber();
+            System.out.println("secondNumber = " + secondNumber);
+            System.out.println("firstNumber = " + firstNumber);
             firstNumber -= secondNumber;
-            CheckpointUtils.moveToConsole(firstNumber, secondNumber);
-        } while ((firstNumber > 999));
+            System.out.println("firstNumber - secondNumber = " + firstNumber);
+            if (firstNumber < 1000) {
+                System.out.println("Game over");
+            } else {
+                CheckpointUtils.moveToConsole(firstNumber, secondNumber);
+            }    
+        } while ((firstNumber >= 1000));
     }
     
 }

@@ -1,7 +1,5 @@
 package checkpoint;
 
-import java.util.*;
-
 /**
  *
  * @author Maria
