@@ -15,6 +15,9 @@ public class CheckpointUtils {
                 System.out.println(DigitsUtils.getDigitsSum(firstNumber));
                 break;
             case 3:
+                int[] array = DigitsUtils.getDigitsArray(firstNumber);
+                System.out.println(TriangleUtils.
+                        isEquilateralTriangle(array[1], array[2], array[3]));
                 break;
             default:
                 System.out.println("Your number is not equal to 1 || 2 || 3");

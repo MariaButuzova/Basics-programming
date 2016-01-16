@@ -6,7 +6,7 @@ package checkpoint;
  */
 abstract class DigitsUtils {
     
-    private static int[] getDigitsArray(int number) {
+    protected static int[] getDigitsArray(int number) {
         number = Math.abs(number);
         String string = String.valueOf(number);
         int[] digitsArray = new int[string.length()];        

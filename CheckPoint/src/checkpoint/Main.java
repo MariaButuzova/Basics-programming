@@ -17,7 +17,12 @@ public class Main {
     public static void main(String[] args) {
         int firstNumber;
         int secondNumber;
-        firstNumber = 
+        firstNumber = InputDataUtils.getFirstNumber();
+        secondNumber = InputDataUtils.getSecondNumber();
+        do {
+            firstNumber -= secondNumber;
+            CheckpointUtils.moveToConsole(firstNumber, secondNumber);
+        } while ((firstNumber > 999));
     }
     
 }
