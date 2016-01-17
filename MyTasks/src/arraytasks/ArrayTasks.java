@@ -9,7 +9,7 @@ import mytasks.RandomData;
  * @author Maria
  */
 public class ArrayTasks extends Task{
-    private int[] intArray = RandomData.getIntArray(-1, 1);
+    private int[] intArray = RandomData.getIntArray(-1, 40);
     private double[] doubleArray = RandomData.getDoubleArray(-1, 1);
         
     /**
@@ -23,11 +23,12 @@ public class ArrayTasks extends Task{
     @Override
     public void performTask() {
         System.out.println(Arrays.toString(intArray));
-        System.out.println(ArrayUtils.getMaxIndexes(intArray));
-        System.out.println(Arrays.toString(doubleArray));
-        System.out.println(ArrayUtils.getMaxIndexes(doubleArray));
-        intArray = null;
-        System.out.println(ArrayUtils.getMaxIndexes(intArray));
+        //System.out.println(ArrayUtils.getMaxIndexes(intArray));
+        System.out.println(ArrayUtils.getFibonacciNumbers(intArray));
+        //System.out.println(Arrays.toString(doubleArray));
+        //System.out.println(ArrayUtils.getMaxIndexes(doubleArray));
+        //intArray = null;
+        //System.out.println(ArrayUtils.getMaxIndexes(intArray));
     }
 
 }

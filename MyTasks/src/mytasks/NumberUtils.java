@@ -1,6 +1,7 @@
 package mytasks;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 /**
  *
@@ -39,15 +40,4 @@ public class NumberUtils {
         if (isEvenNumber(x)) return 2;
         return 1;
     }
-    
-    public static void getFibonacciNumbers(int max){
-        BigInteger number = BigInteger.ONE;
-        BigInteger temp = BigInteger.ONE;
-        for (int i = 0; i < max; ++i) {
-            number = ((i < 2) ? number : (number.add(temp)));
-            temp = number.subtract(temp);
-            System.out.println(number);
-        }
-    }
-    
 }

@@ -54,24 +54,16 @@ abstract class ArrayUtils {
     protected static ArrayList<Integer> getFibonacciNumbers(int[] array) {
         ArrayList arrayList = new ArrayList();
         if (!isEmptyArray(array)) return arrayList;
-        int max = array[0];
-        for (int i = 1; i < array.length; ++i) {
-            if (max < array[i]) {
-                max = array[i];
+        Arrays.sort(array);
+        int j = 1;
+        int fib = 1;
+        for (int i = 0; i < array.length; ++i) {
+            for (; j <= array[i]; j += fib, fib = j - fib) {
+                if ((array[i] == j) && (arrayList.lastIndexOf(array[i]) == -1)) {
+                    arrayList.add(array[i]);
+                }
             }
         }
-        if (max <= 0) return arrayList;
-        /*for 
-        if ((max == 1))
-            public static void getFibonacciNumbers(int count){
-        BigInteger number = BigInteger.ONE;
-        BigInteger temp = BigInteger.ONE;
-        for (int i = 0; i < count; ++i) {
-            number = ((i < 2) ? number : (number.add(temp)));
-            temp = number.subtract(temp);
-            System.out.println(number);
-        }
-    }*/
         return arrayList;
     }
 }
