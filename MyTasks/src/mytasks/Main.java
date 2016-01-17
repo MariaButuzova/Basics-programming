@@ -10,6 +10,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int a = 0;
         Task task1 = new Task1();
         Task task2 = new Task2();
         Task task3 = new Task3();

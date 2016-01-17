@@ -6,39 +6,35 @@ import java.util.*;
  *
  * @author Maria
  */
-public class InputDataUtils {
+public class RandomData extends InputData{
+    private static final int MAX_LENGTH = 1000;
+    private static final int MIN_LENGTH = 1;
     
-    public static int getIntRandom() {
+    private static int getArrayLength() {
         Random random = new Random();
-        return (random.nextInt(10));
+        return (random.nextInt((MAX_LENGTH - MIN_LENGTH) + 1) + MIN_LENGTH);
     }
     
-    public static String getString() {
+    @Override
+    public String getString() {
         Random random = new Random();
         String string[] = {"  -  67777.   ", null, "--7878787", " 0987", "-  .", 
             ".", "         ", "9999.", "9.9", "9.9.9", "@-1"};
         return string[random.nextInt(string.length)];
     }
     
-    public static char getCharSymbol() {
+    @Override
+    public char getCharSymbol() {
         Random random = new Random();
         String string = "0123456789 qwertyuiop[]asdfghjkl;'zxcvbnm,./!@#$%^&*()"
                 + "_+|";
         return string.charAt(random.nextInt(string.length()));
     }
     
-    public static int[] getIntArray() {
-        int[] array = {1,3,3,4,4,4,5,3,4,78,78,78,5,1,6,5,5,5};
-        return array;
-    }
-    
-    /**
-     *
-     * @param number
-     * @return
-     */
-    public static int[] getIntArrayRandom(int number) {
+    @Override
+    public int[] getIntArray() {
         Random random = new Random();
+        int number = getArrayLength();
         int[] array = new int[number];
         for (int i = 0; i < array.length; ++i) {
             array[i] = random.nextInt();
@@ -46,15 +42,9 @@ public class InputDataUtils {
         return array;
     }
     
-    /**
-     * method getIntArrayRandom
-     * @param min
-     * @param max
-     * @return 
-     */
-    public static int[] getIntArrayRandom(int min, int max) {
+    public static int[] getIntArray(int min, int max) {
         Random random = new Random();
-        int number = getIntRandom();
+        int number = getArrayLength();
         int[] array = new int[number];
         for (int i = 0; i < array.length; ++i) {
             array[i] = random.nextInt((max - min) +1) + min;
@@ -62,15 +52,20 @@ public class InputDataUtils {
         return array;
     }
     
-    /**
-     *
-     * @param min
-     * @param max
-     * @return
-     */
-    public static double[] getDoubleArrayRandom(int min, int max) {
+    @Override
+    public double[] getDoubleArray() {
         Random random = new Random();
-        int number = getIntRandom();
+        int number = getArrayLength();
+        double[] array = new double[number];
+        for (int i = 0; i < array.length; ++i) {
+            array[i] = random.nextDouble();
+        }
+        return array;
+    }
+    
+    public static double[] getDoubleArray(int min, int max) {
+        Random random = new Random();
+        int number = getArrayLength();
         double[] array = new double[number];
         for (int i = 0; i < array.length; ++i) {
             array[i] = random.nextDouble()*((max - min) +1) + min;

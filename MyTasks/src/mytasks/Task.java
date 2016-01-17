@@ -4,7 +4,6 @@ package mytasks;
  *
  * @author Maria
  */
-abstract class Task {
-    abstract void performTask();
-    
+public abstract class Task {
+    public abstract void performTask();
 }
