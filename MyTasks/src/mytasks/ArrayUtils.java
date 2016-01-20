@@ -66,4 +66,25 @@ public class ArrayUtils {
         }
         return arrayList;
     }
+    
+    public static ArrayList<Integer> getNotFibonacciNumbers(int[] array) {
+        ArrayList arrayList = new ArrayList();
+        if (!isEmptyArray(array)) return arrayList;
+        Arrays.sort(array);
+        int j = 1;
+        int fib = 1;
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length; ++i) {
+            if (array[i] > fib) {
+                for (; fib < array[i];) {
+                    fib += j;
+                    j = fib - j;
+                }
+            } 
+            if (array[i] < fib) {
+                arrayList.add(array[i]);
+            }
+        }
+        return arrayList;
+    }
 }
