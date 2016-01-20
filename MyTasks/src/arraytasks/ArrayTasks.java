@@ -1,34 +1,22 @@
 package arraytasks;
 
+import mytasks.ArrayUtils;
 import java.util.*;
-import mytasks.Task;
 import mytasks.RandomData;
 
 /**
  *
  * @author Maria
  */
-public class ArrayTasks extends Task{
-    private int[] intArray = RandomData.getIntArray(-1, 40);
-    private double[] doubleArray = RandomData.getDoubleArray(-1, 1);
+public class ArrayTasks{
         
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayTasks arrayTasks = new ArrayTasks();
-        arrayTasks.performTask();
-    }
-
-    @Override
-    public void performTask() {
+        RandomData randomData = new RandomData();
+        int[] intArray = randomData.getIntArray();
         System.out.println(Arrays.toString(intArray));
-        //System.out.println(ArrayUtils.getMaxIndexes(intArray));
         System.out.println(ArrayUtils.getFibonacciNumbers(intArray));
-        //System.out.println(Arrays.toString(doubleArray));
-        //System.out.println(ArrayUtils.getMaxIndexes(doubleArray));
-        //intArray = null;
-        //System.out.println(ArrayUtils.getMaxIndexes(intArray));
     }
-
 }

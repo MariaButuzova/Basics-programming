@@ -1,4 +1,4 @@
-package arraytasks;
+package mytasks;
 
 import java.math.BigInteger;
 import java.util.*;
@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @author Maria
  */
-abstract class ArrayUtils {
+public class ArrayUtils {
     
     private static boolean isEmptyArray(int[] array) {
         return (((array == null) || (array.length == 0)) ? false : true);
@@ -17,7 +17,7 @@ abstract class ArrayUtils {
         return (((array == null) || (array.length == 0)) ? false : true);
     }
         
-    protected static ArrayList<Integer> getMaxIndexes(int[] array) {
+    public static ArrayList<Integer> getMaxIndexes(int[] array) {
         ArrayList arrayList = new ArrayList();
         if (!isEmptyArray(array)) return arrayList;
         arrayList.add(0);
@@ -34,7 +34,7 @@ abstract class ArrayUtils {
         return arrayList;
     }
     
-    protected static ArrayList<Integer> getMaxIndexes(double[] array)  {
+    public static ArrayList<Integer> getMaxIndexes(double[] array)  {
         ArrayList arrayList = new ArrayList();
         if (!isEmptyArray(array)) return arrayList;
         arrayList.add(0);
@@ -51,7 +51,7 @@ abstract class ArrayUtils {
         return arrayList;
     }
     
-    protected static ArrayList<Integer> getFibonacciNumbers(int[] array) {
+    public static ArrayList<Integer> getFibonacciNumbers(int[] array) {
         ArrayList arrayList = new ArrayList();
         if (!isEmptyArray(array)) return arrayList;
         Arrays.sort(array);

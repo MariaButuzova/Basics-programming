@@ -2,15 +2,15 @@ package mytasks;
 
 /**
  *
- * @author Maria
+ * @author Mashka
  */
-abstract class InputData {
+public interface InputData {
     
-    abstract String getString();
+    String getString();
     
-    abstract char getCharSymbol();
-   
-    abstract int[] getIntArray();
+    char getCharSymbol();
+
+    int[] getIntArray();
     
-    abstract double[] getDoubleArray();   
+    double[] getDoubleArray();
 }
