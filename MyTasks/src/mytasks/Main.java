@@ -19,7 +19,47 @@ public class Main {
         System.out.println(NumberUtils.getFactorial(6));
         System.out.println(NumberUtils.getFactorial(7));
         BigInteger number = new BigInteger("5041");
-        System.out.println(NumberUtils.getNearestFactorial(number));
+        performFactorialTiming(number);
+        
+    }
+    
+    public static void performFactorialTiming(BigInteger number) {
+        long counter = 500000000;
+        BigInteger start;
+        BigInteger end;
+        BigInteger delta1;
+        BigInteger delta2;
+    /*
+        for (int i = 1; i <= counter; ++i) {
+            start = System.nanoTime();
+            System.out.println(NumberUtils.getNearestFactorialByMultiply(number));
+            end = System.nanoTime();
+            delta1 = end - start;
+            delta1 += delta1;
+            start = System.nanoTime();
+            System.out.println(NumberUtils.getNearestFactorialBySubtract(number));
+            end = System.nanoTime();
+            delta2 = end - start;
+            delta2 += delta2;
+            System.out.println("ByMultiply == " + delta1 + "; BySubtract == " + delta2);
+        }
+        System.out.println("ByMultiply - BySubtract == " + (delta1 - delta2));
+    */
+        start = new BigInteger("System.nanoTime()");
+        for (int i = 1; i <= counter; ++i) {
+            NumberUtils.getNearestFactorialByMultiply(number);
+        }
+        end = new BigInteger("System.nanoTime()");
+        delta1 = end.subtract(start);
+        start = new BigInteger("System.nanoTime()");
+        for (int i = 1; i <= counter; ++i) {
+            NumberUtils.getNearestFactorialByMultiply(number);
+        }
+        end = new BigInteger("System.nanoTime()");
+        delta2 = end.subtract(start);
+        System.out.println("ByMultiply == " + delta1 + "; BySubtract == " + delta2);
+        System.out.println("ByMultiply - BySubtract == " + (delta1.subtract(delta2)));
+        System.out.println("millis == " + delta1.subtract(delta2).divide(BigInteger.valueOf((long) 1000000)));
     }
     
     public static void performTask(int n) {

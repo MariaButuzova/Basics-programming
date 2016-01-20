@@ -68,7 +68,7 @@ public class NumberUtils {
         return factorial;
     }
     
-    public static BigInteger getNearestFactorial(BigInteger number) {
+    public static BigInteger getNearestFactorialByMultiply(BigInteger number) {
         BigInteger factorial = BigInteger.ONE;
         BigInteger prevFact = BigInteger.ONE;
         if (number.compareTo(BigInteger.ZERO) == -1) return BigInteger.ZERO;
@@ -78,13 +78,35 @@ public class NumberUtils {
         for (; factorial.compareTo(number) == -1; ++i) {
             prevFact = factorial;
             factorial = factorial.multiply(BigInteger.valueOf((long) i));
+            if (factorial.compareTo(number) == 0) return factorial;
         }
-        if (factorial.compareTo(number) == 0) return factorial;
+        
         /**
          * if (number > ((n - 1)!/2)*(n + 1) return n! else return (n - 1)!
          *
          */
         return ((number.compareTo(BigInteger.valueOf(i).multiply(prevFact.divide(BigInteger.valueOf(2)))) == 1)
                 ? factorial : prevFact);        
-    } 
+    }
+    
+    public static BigInteger getNearestFactorialBySubtract(BigInteger number) {
+        BigInteger factorial = BigInteger.ONE;
+        BigInteger prevFact = BigInteger.ONE;
+        if (number.compareTo(BigInteger.ZERO) == -1) return BigInteger.ZERO;
+        if (number.compareTo(BigInteger.ZERO) == 0
+                || number.compareTo(BigInteger.ONE) == 0) return BigInteger.ONE;
+        int i = 2;
+        for (; factorial.compareTo(number) == -1; ++i) {
+            prevFact = factorial;
+            factorial = factorial.multiply(BigInteger.valueOf((long) i));
+            if (factorial.compareTo(number) == 0) return factorial;
+        }
+        
+        /**
+         * if ((n! - number) < (number - (n - 1)!) return n! else return (n - 1)!
+         *
+         */
+        return ((factorial.subtract(number).compareTo(number.subtract(prevFact))) == -1
+                ? factorial : prevFact);        
+    }
 }
