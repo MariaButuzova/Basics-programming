@@ -4,13 +4,17 @@ package mytasks;
  *
  * @author Maria
  */
-public class StringDataUtils {
+abstract class StringUtils {
    
     public static String addHelloToString(String string) {
         StringBuilder s = new StringBuilder("Hello");
         s.append(string);
         return s.toString();
     }
+    
+    abstract boolean isInteger();
+    
+    abstract boolean isDouble();
    
     public static boolean checkStringIsNumber(String string) {
         if (string == null) {

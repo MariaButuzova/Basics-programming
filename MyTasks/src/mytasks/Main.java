@@ -1,20 +1,25 @@
 package mytasks;
 
-import java.util.*;
+import java.math.BigInteger;
+import java.util.Arrays;
 
 /**
  *
  * @author Maria
  */
 public class Main {
+    static RandomData randomData = new RandomData();
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        for (int taskNumber = 1; taskNumber < 16; ++taskNumber) {
-            performTask(taskNumber);
-        }    
+        System.out.println(NumberUtils.getFactorial(4));
+        System.out.println(NumberUtils.getFactorial(5));
+        System.out.println(NumberUtils.getFactorial(6));
+        System.out.println(NumberUtils.getFactorial(7));
+        BigInteger number = new BigInteger("5041");
+        System.out.println(NumberUtils.getNearestFactorial(number));
     }
     
     public static void performTask(int n) {
@@ -28,12 +33,12 @@ public class Main {
         System.out.println("Performing task #" + n);
         switch (n) {
             case 1:
-                string = InputDataUtils.getString();
+                string = randomData.getString();
                 System.out.println(string);
-                System.out.println(StringDataUtils.addHelloToString(string));
+                System.out.println(StringUtils.addHelloToString(string));
                 break;
             case 2:
-                ch = InputDataUtils.getCharSymbol();
+                ch = randomData.getCharSymbol();
                 System.out.println(ch + " isDigit?\n" + (Character.isDigit(ch)));
                 break;
             case 3:
@@ -44,7 +49,7 @@ public class Main {
                         + TriangleUtils.isRightTriangle(a, b, c));
                 break;
             case 4:
-                array = InputDataUtils.getIntArrayRandom(50);
+                array = randomData.getIntArray();
                 for (int i = 0; i < (array.length - array.length % 3); i += 3) {
                     System.out.println("a = " + array[i]
                             + "; b = " + array[i + 1]
@@ -54,13 +59,8 @@ public class Main {
                                     array[i + 1], array[i + 2]));
                 }
                 break;
-            case 5:
-                array = InputDataUtils.getIntArrayRandom();
-                System.out.println(Arrays.toString(array));
-                System.out.println(TriangleUtils.
-                        getCountEquilateralTriangles(array));
-                System.out.println("If no triangles data");
-                array = InputDataUtils.getIntArrayRandom(50);
+                case 5:
+                array = randomData.getIntArray();
                 System.out.println(Arrays.toString(array));
                 System.out.println(TriangleUtils.
                         getCountEquilateralTriangles(array));
@@ -87,9 +87,9 @@ public class Main {
                 System.out.println("true == "
                         + NumberUtils.isXMultipleY(10, 5.));
                 break;
-            case 7:
-                a = InputDataUtils.getIntRandom();
-                b = InputDataUtils.getIntRandom();
+                case 7:
+                a = 1;
+                b = 1;
                 int condition = NumberUtils.checkNumbersEvenOrOdd(a, b);
                 switch (condition) {
                     case 0:
@@ -104,24 +104,23 @@ public class Main {
                 }
                 break;
             case 8:
-                number = InputDataUtils.getDigitsNumber();
+                number = randomData.getFourDigits();
                 System.out.println(number);
                 int sum = DigitsUtils.getDigitsSum(number);
                 System.out.println(sum + " isEven? "
                         + NumberUtils.isEvenNumber(sum));
                 break;
             case 9:
-                number = InputDataUtils.getDigitsNumber();
+                number = randomData.getFourDigits();
                 System.out.println(number);
-                System.out.println(DigitsUtils.isPalindrome(number));
                 break;
             case 10:
-                number = InputDataUtils.getDigitsNumber();
+                number = randomData.getFourDigits();
                 System.out.println(number);
                 System.out.println(DigitsUtils.isEvenSumHalfDigits(number));
                 break;
             case 11:
-                number = InputDataUtils.getDigitsNumber();
+                number = randomData.getFourDigits();
                 System.out.println(number);
                 System.out.println(DigitsUtils.isNotLessDigit(number));
                 break;
@@ -144,22 +143,12 @@ public class Main {
                 }
                 break;
             case 14:
-                string = InputDataUtils.getString();
+                string = randomData.getString();
                 System.out.println(string);
-                System.out.println(StringDataUtils.checkStringIsNumber(string));
+                System.out.println(StringUtils.checkStringIsNumber(string));
                 break;
-            case 15:
-                double[] dArray = InputDataUtils.getDoubleArrayRandom(23);
-                System.out.println(Arrays.toString(dArray));
-                System.out.println(ArrayUtils.getMaxIndexes(dArray));
-                array = InputDataUtils.getIntArrayRandom(20);
-                System.out.println(Arrays.toString(array));
-                System.out.println(ArrayUtils.getMaxIndexes(array));
-                break;
-            default:
-                System.out.println("12 tasks have been implemented."
-                        + " There is more to come");
         }
     }
+
 
 }

@@ -6,7 +6,7 @@ import java.util.*;
  *
  * @author Maria
  */
-public class TriangleUtils {
+public abstract class TriangleUtils{
     
     public static boolean isTriangle(int a, int b, int c) {
         if (a <= 0 || b <= 0 || c <= 0) return false;
