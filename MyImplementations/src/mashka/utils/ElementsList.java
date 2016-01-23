@@ -12,6 +12,13 @@ package mashka.utils;
 public interface ElementsList {
     
     /**
+     * Returns the number of elements in this list.
+     * 
+     * @return the number of elements in this list
+     */
+    int size();
+    
+    /**
      * Adds an element to the end of the list.
      * 
      * @param e 
@@ -75,19 +82,13 @@ public interface ElementsList {
      */
     int indexOf(Object o);
     
-    /**
-     * Returns the number of elements in this list.  If this list contains
-     * more than Integer.MAX_VALUE elements, returns Integer.MAX_VALUE.
-     *
-     * @return the number of elements in this list
-     */
-    int size();
     
     /**
      * Returns new array containing all of the elements in this list
      * in proper sequence (from first to last element).
      * 
-     * @return
+     * @return an array containing all of the elements in this list in proper
+     *         sequence
      */
     Object[] toArray();
 }
