@@ -23,14 +23,18 @@ public class Main {
         col.add(1);
         col.add(cal);
         col.add(cal2);
-        System.out.println(col);
         System.out.println(Arrays.toString(col.toArray()));
         ArrayList<Integer> data = new ArrayList();
         data.add(Integer.SIZE);
         data.add(Integer.MAX_VALUE);
-        System.out.println(data);
-        Object[] o = data.toArray();
-        col.addAll(o);
+        col.addAll(data);
+        col.addAll(data);
+        System.out.println(Arrays.toString(col.toArray()));
+        //System.out.println(data);
+        //Object[] o = data.toArray();
+        //Arrays.copyOf(o, o.length);
+        //System.out.println(Arrays.toString(o));
+        //col.addAll(o);
     }
 
 }

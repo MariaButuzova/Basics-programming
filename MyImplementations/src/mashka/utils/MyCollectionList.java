@@ -7,6 +7,7 @@
 package mashka.utils;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -51,8 +52,8 @@ public class MyCollectionList implements ElementsList {
         return size;
     }
     
-    private int addCapacity(int elementsNumber) {
-        return (myCollection.length + elementsNumber);
+    private Object[] addCapacity(int elementsNumber) {
+        return (Arrays.copyOf(myCollection, myCollection.length + elementsNumber));
     }
         
     /**
@@ -62,7 +63,7 @@ public class MyCollectionList implements ElementsList {
      */
     @Override
     public void add(Object e) {
-        myCollection = Arrays.copyOf(myCollection, addCapacity(1));
+        myCollection = addCapacity(1);
         myCollection[size++] = e;
     }
 
@@ -79,9 +80,15 @@ public class MyCollectionList implements ElementsList {
 
     @Override
     public void addAll(Object[] c) {
-        myCollection = Arrays.copyOf(myCollection, addCapacity(c.length));
-        System.arraycopy(myCollection, 0, c, size, c.length);
-        size = myCollection.length;
+        int numAdd = c.length;
+        myCollection = addCapacity(numAdd);
+        System.arraycopy(c, 0, myCollection, size, numAdd);
+        size += numAdd;
+    }
+    
+    public void addAll(List<? extends Object> list) {
+        Object[] c = list.toArray();
+        addAll(c);
     }
 
     @Override
