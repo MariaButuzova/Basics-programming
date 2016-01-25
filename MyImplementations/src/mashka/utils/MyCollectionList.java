@@ -79,6 +79,10 @@ public class MyCollectionList implements ElementsList {
         return ("index " + index + " is out of range [0.." + (size() - 1) + "]");
     }
     
+    //should be implemented
+    private void checkMaxCapacity(int currentCaracity) {
+    }
+    
     /**
      * Adds an element at the specified position in the list.
      * 
