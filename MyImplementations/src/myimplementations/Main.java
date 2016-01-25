@@ -16,25 +16,33 @@ public class Main {
      */
     public static void main(String[] args) {
         MyCollectionList col = new MyCollectionList();
-        GregorianCalendar cal = new GregorianCalendar();
-        
+        GregorianCalendar cal = null;
         GregorianCalendar cal2 = new GregorianCalendar();
         System.out.println(Arrays.toString(col.toArray()));
         col.add(1);
-        col.add(cal);
-        col.add(cal2);
+        //System.out.println(col.size());
+        //System.out.println(Arrays.toString(col.toArray()));
+        col.add('d');
+        col.add(4);
         System.out.println(Arrays.toString(col.toArray()));
         ArrayList<Integer> data = new ArrayList();
         data.add(Integer.SIZE);
         data.add(Integer.MAX_VALUE);
-        col.addAll(data);
-        col.addAll(data);
+        col.addAll(2, data);
+        System.out.println(Arrays.toString(col.toArray()));
+        System.out.println(col.size());
+        col.addAll(4, data);
+        System.out.println(Arrays.toString(col.toArray()));
+        System.out.println(col.get(4));
+        Object d = col.remove(5);
+        System.out.println(col.indexOf(null));
         System.out.println(Arrays.toString(col.toArray()));
         //System.out.println(data);
         //Object[] o = data.toArray();
         //Arrays.copyOf(o, o.length);
         //System.out.println(Arrays.toString(o));
-        //col.addAll(o);
+        //col.addAll(1, o);
+        //System.out.println(Arrays.toString(col.toArray()));
     }
 
 }
