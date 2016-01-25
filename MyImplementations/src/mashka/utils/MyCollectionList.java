@@ -137,7 +137,10 @@ public class MyCollectionList implements ElementsList {
     public Object remove(int index) {
         checkRange(index);
         Object deletedElement = myCollection[index];
-        myCollection[index] = null;
+        if ((size() - (index + 1)) > 0) {
+            System.arraycopy(myCollection, index + 1, myCollection, index, size() - (index + 1));
+        }
+        Arrays.copyOf(myCollection, --size);
         return deletedElement;
     }
 

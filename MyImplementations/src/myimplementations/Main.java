@@ -34,7 +34,7 @@ public class Main {
         col.addAll(4, data);
         System.out.println(Arrays.toString(col.toArray()));
         System.out.println(col.get(4));
-        Object d = col.remove(5);
+        Object d = col.remove(0);
         System.out.println(col.indexOf(null));
         System.out.println(Arrays.toString(col.toArray()));
         //System.out.println(data);
