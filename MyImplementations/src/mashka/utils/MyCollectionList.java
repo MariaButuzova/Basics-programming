@@ -69,9 +69,21 @@ public class MyCollectionList implements ElementsList {
     }
     
     private void checkCapacity(int elementsNumber) {
-        if ((size + elementsNumber) > myCollection.length) {
+        checkMaxCapacity(elementsNumber);
+        if ((size() + elementsNumber) > myCollection.length) {
             addCapacity(elementsNumber);
         }
+    }
+
+    private void checkMaxCapacity(int elementsNumber) {
+        if (size() + elementsNumber > MAX_CAPACITY) {
+            throw new OutOfMemoryError(outOfMemoryMsg(elementsNumber));
+        }
+    }
+    
+    private String outOfMemoryMsg(int elementsNumber) {
+        return ("requested collection size = " + (size() + elementsNumber)
+                + " exceeds VM limit");
     }
             
     /**
@@ -93,11 +105,7 @@ public class MyCollectionList implements ElementsList {
     private String outOfBoundsMsg(int index) {
         return ("index " + index + " is out of range [0.." + (size() - 1) + "]");
     }
-    
-    //should be implemented
-    private void checkMaxCapacity(int currentCaracity) {
-    }
-    
+
     /**
      * Adds an element at the specified position in the list.
      * 
