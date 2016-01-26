@@ -7,7 +7,6 @@
 package mashka.utils;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  *
@@ -60,20 +59,12 @@ public class MyCollectionList implements ElementsList {
     public int size() {
         return size;
     }
-    
-    /**
-     * Returns true if this list contains no elements.
-     *
-     * @return true if this list contains no elements
-     */
-    private boolean isEmpty() {
-        return (size == 0);
-    }
-    
+
     private Object[] addCapacity(int elementsNumber) {
         myCollection = (myCollection.length == 0 ?
                 Arrays.copyOf(myCollection, DEFAULT_CAPACITY) :
-                Arrays.copyOf(myCollection, myCollection.length + elementsNumber));
+                Arrays.copyOf(myCollection, 
+                              myCollection.length + elementsNumber));
         return myCollection;
     }
     
@@ -117,7 +108,8 @@ public class MyCollectionList implements ElementsList {
     public void add(int index, Object element) {
         checkRange(index);
         checkCapacity(1);
-        System.arraycopy(myCollection, index, myCollection, index + 1, size() - index);
+        System.arraycopy(myCollection, index, myCollection, index + 1,
+                         size() - index);
         myCollection[index] = element;
         size++;
     }
@@ -135,7 +127,8 @@ public class MyCollectionList implements ElementsList {
         checkRange(index);
         int numAdd = c.length;
         checkCapacity(numAdd);
-        System.arraycopy(myCollection, index, myCollection, index + numAdd, size() - index);
+        System.arraycopy(myCollection, index, myCollection, index + numAdd,
+                         size() - index);
         System.arraycopy(c, 0, myCollection, index, numAdd);
         size += numAdd;
     }
@@ -151,7 +144,8 @@ public class MyCollectionList implements ElementsList {
         checkRange(index);
         Object deletedElement = myCollection[index];
         if ((size() - (index + 1)) > 0) {
-            System.arraycopy(myCollection, index + 1, myCollection, index, size() - (index + 1));
+            System.arraycopy(myCollection, index + 1, myCollection, index, 
+                             size() - (index + 1));
         }
         myCollection[size--] = null;
         return deletedElement;
