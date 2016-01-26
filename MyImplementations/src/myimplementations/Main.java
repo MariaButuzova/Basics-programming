@@ -24,25 +24,26 @@ public class Main {
         //System.out.println(Arrays.toString(col.toArray()));
         col.add('d');
         col.add(4);
+        col.add(null);
+        col.add(42);
         System.out.println(Arrays.toString(col.toArray()));
         ArrayList<Integer> data = new ArrayList();
         data.add(Integer.SIZE);
         data.add(Integer.MAX_VALUE);
-        col.addAll(2, data);
+        col.add(1, data);
         System.out.println(Arrays.toString(col.toArray()));
-        System.out.println(col.size());
-        col.addAll(4, data);
-        System.out.println(Arrays.toString(col.toArray()));
-        System.out.println(col.get(4));
-        Object d = col.remove(0);
-        System.out.println(col.indexOf(null));
-        System.out.println(Arrays.toString(col.toArray()));
-        //System.out.println(data);
-        //Object[] o = data.toArray();
+        System.out.println("size == " + col.size());
+        
+        System.out.println(data);
+        Object[] o = data.toArray();
         //Arrays.copyOf(o, o.length);
-        //System.out.println(Arrays.toString(o));
-        //col.addAll(1, o);
-        //System.out.println(Arrays.toString(col.toArray()));
+        System.out.println(Arrays.toString(o));
+        col.addAll(1, o);
+        System.out.println(Arrays.toString(col.toArray()));
+        System.out.println(col.remove(3));
+        System.out.println(Arrays.toString(col.toArray()));
+        col.set(6, data);
+        System.out.println(Arrays.toString(col.toArray()));
     }
 
 }

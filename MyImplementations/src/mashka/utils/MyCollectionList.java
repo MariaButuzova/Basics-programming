@@ -33,6 +33,12 @@ public class MyCollectionList implements ElementsList {
     private static final Object[] EMPTY_CAPACITY = {};
     
     /**
+     * Default initial capacity.
+     * the question of Life, the Universe, and Everything...
+     */
+    private static final int DEFAULT_CAPACITY = 42;
+    
+    /**
      * The maximum size of the collection capacity to allocate.
      * Some VMs reserve some header words in an array.
      * Attempts to allocate larger arrays may result in
@@ -55,10 +61,28 @@ public class MyCollectionList implements ElementsList {
         return size;
     }
     
-    private Object[] addCapacity(int elementsNumber) {
-        return (Arrays.copyOf(myCollection, myCollection.length + elementsNumber));
+    /**
+     * Returns true if this list contains no elements.
+     *
+     * @return true if this list contains no elements
+     */
+    private boolean isEmpty() {
+        return (size == 0);
     }
-        
+    
+    private Object[] addCapacity(int elementsNumber) {
+        myCollection = (myCollection.length == 0 ?
+                Arrays.copyOf(myCollection, DEFAULT_CAPACITY) :
+                Arrays.copyOf(myCollection, myCollection.length + elementsNumber));
+        return myCollection;
+    }
+    
+    private void checkCapacity(int elementsNumber) {
+        if ((size + elementsNumber) > myCollection.length) {
+            addCapacity(elementsNumber);
+        }
+    }
+            
     /**
      * Adds an element to the end of the list.
      * 
@@ -66,7 +90,7 @@ public class MyCollectionList implements ElementsList {
      */
     @Override
     public void add(Object e) {
-        myCollection = addCapacity(1);
+        checkCapacity(1);
         myCollection[size++] = e;
     }
 
@@ -92,7 +116,7 @@ public class MyCollectionList implements ElementsList {
     @Override
     public void add(int index, Object element) {
         checkRange(index);
-        myCollection = addCapacity(1);
+        checkCapacity(1);
         System.arraycopy(myCollection, index, myCollection, index + 1, size() - index);
         myCollection[index] = element;
         size++;
@@ -101,30 +125,19 @@ public class MyCollectionList implements ElementsList {
     @Override
     public void addAll(Object[] c) {
         int numAdd = c.length;
-        myCollection = addCapacity(numAdd);
+        checkCapacity(numAdd);
         System.arraycopy(c, 0, myCollection, size(), numAdd);
         size += numAdd;
-    }
-    
-    public void addAll(List<? extends Object> list) {
-        Object[] c = list.toArray();
-        addAll(c);
     }
 
     @Override
     public void addAll(int index, Object[] c) {
         checkRange(index);
         int numAdd = c.length;
-        myCollection = addCapacity(numAdd);
-        System.arraycopy(myCollection, index, myCollection, index + numAdd, (index + numAdd) - size());
-        System.out.println(index);
+        checkCapacity(numAdd);
+        System.arraycopy(myCollection, index, myCollection, index + numAdd, size() - index);
         System.arraycopy(c, 0, myCollection, index, numAdd);
         size += numAdd;
-    }
-    
-    public void addAll(int index, List<? extends Object> list) {
-        Object[] c = list.toArray();
-        addAll(index, c);
     }
 
     @Override
@@ -140,7 +153,7 @@ public class MyCollectionList implements ElementsList {
         if ((size() - (index + 1)) > 0) {
             System.arraycopy(myCollection, index + 1, myCollection, index, size() - (index + 1));
         }
-        Arrays.copyOf(myCollection, --size);
+        myCollection[size--] = null;
         return deletedElement;
     }
 
